@@ -1,59 +1,132 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta name="viewport" content="width=1920"/>
-    <meta name="description"
-          content="Tizen Download API Demo" />
-
-    <title>Tizen Download API</title>
-
-    <script type='text/javascript' src='$WEBAPIS/webapis/webapis.js'></script>
-    <link rel="stylesheet" type="text/css" href="style.css" />
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Santa Plaza Shopping Center</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+  <header>
+    <h1>Santa Plaza Shopping Center</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <h1>Tizen Download API</h1>
+  <main>
+    <h2>Welcome to Santa Plaza!</h2>
+    <img src="images/santa_plaza_logo.jpg" alt="Santa Plaza Logo">
+    <p>Santa Plaza is your one-stop shop for a delightful shopping experience. We offer a diverse range of stores, restaurants, and entertainment options under one roof. From trendy clothing boutiques to delectable dining choices, we cater to all your needs. Come explore, discover, and create lasting memories at Santa Plaza!</p>
+  </main>
 
-    <div class="left">
-        <h2>Available buttons/actions:</h2>
+  <main>
+    <h2>Our Exciting Services</h2>
+    <p>Santa Plaza offers a variety of services to enhance your shopping experience.</p>
 
-        <div>
-            1 - Downloaded file lists<br>
-            2 - Start download - small file<br>
-            3 - Start download - large file<br>
-            Pause - Pause download<br>
-            Play - Resume download<br>
-            Stop - Cancel download<br>
-            0 - Clear logs
-        </div>
+    <section class="services">
+      <article>
+        <h3>Event Spaces</h3>
+        <a href="service_details.html?service=event_space">
+          <img src="images/event_space.jpg" alt="Image of Event Space">
+        </a>
+        <p>Make your dream event a reality with our fully equipped event spaces. Perfect for conferences, meetings, or social gatherings.</p>
+      </article>
+      <article>
+        <h3>Clothing Shops</h3>
+        <a href="service_details.html?service=clothing_shop">
+          <img src="images/clothing_shop.jpg" alt="Image of Clothing Shop">
+        </a>
+        <p>Discover the latest fashion trends at our diverse selection of clothing stores. Find the perfect outfit for any occasion.</p>
+      </article>
+      <article>
+        <h3>Convenient Parking</h3>
+        <a href="service_details.html?service=parking">
+          <img src="images/parking.jpg" alt="Image of Parking Lot">
+        </a>
+        <p>Enjoy hassle-free parking with ample spaces available throughout the center. Valet service is also offered for your convenience.</p>
+      </article>
+    </section>
+  </main>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Santa Plaza Shopping Center - Service Details</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      </nav>
+  </header>
 
-        <div id="progress" class="progress">
-            <div id="bar" class="bar"></div>
-        </div>
+  <main>
+    <?php
+      $service = $_GET["service"]; // Get service name from URL parameter
+      // Use PHP to retrieve service details from database (replace with your implementation)
+      $description = "Sample
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Santa Plaza Shopping Center - Booking</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="#">Booking</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="about.html">About Us</a></li>
+      </ul>
+    </nav>
+  </header>
 
-        <fieldset>
-            <legend>Downloaded files:</legend>
-            <div id="fileList" class="logs"></div>
-        </fieldset>
+  <main>
+    <h2>Make Your Reservation</h2>
+    <p>Reserve your spot at Santa Plaza for a memorable experience.</p>
 
-        <fieldset>
-            <legend>Logs</legend>
-            <div id="logs" class="logs"></div>
-        </fieldset>
-    </div>
-    <div class="right">
-        <h2>Info</h2>
+    <form action="booking_confirmation.php" method="post">
+      <label for="service">Select Service:</label>
+      <select name="service" id="service">
+        <option value="event_space">Event Space</option>
+        <option value="restaurant">Restaurant Table</option>
+        <option value="parking">Parking Spot</option>
+      </select>
+      <br>
 
-        <p>This application demonstrates the usage of Tizen download API</p>
+      <label for="date">Date:</label>
+      <input type="date" name="date" id="date" required>
+      <br>
 
-        <p>The application downloads files from <code>http://techslides.com</code> and <code>http://download.blender.org</code>. If these domains are not accessible it will not work.<br>
+      <label for="time">Time:</label>
+      <input type="time" name="time" id="time" required>
+      <br>
 
-            You can change the source location of files to download by changing the contents of <code>url1</code> and <code>url2</code> variables in <code>main.js</code> file</cide></p>
-    </div>
+      <label for="name">Your Name:</label>
+      <input type="text" name="name" id="name" required>
+      <br>
 
-    <script src="main.js"></script>
+      <label for="email">Email Address:</label>
+      <input type="email" name="email" id="email" required>
+      <br>
+
+      <label for="phone">Phone Number:</label>
+      <input type="tel" name="phone" id="phone">
+      <br>
+ 
+  <footer>
+    <p>&copy; Santa Plaza Shopping Center. All Rights Reserved.</p>
+  </footer>
 </body>
 </html>
+
